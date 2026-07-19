@@ -178,6 +178,13 @@ svg * {
 }
 @font-face {
   font-family: "Inter";
+  src: url("../fonts/Inter-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
   src: url("../fonts/Inter-SemiBold.woff2");
   font-weight: 600;
   font-style: normal;
@@ -209,6 +216,7 @@ svg * {
   --color-accent-20: #f6f3fc;
   --border: 0.0625rem solid #f0ebfa;
   --font-family: "Inter", sans-serif;
+  --font-family-accent: "Josefin Sans", sans-serif;
   --container-width: 91.875rem;
   --container-padding-x: 1rem;
   --transition-duration: 0.2s;
@@ -336,4 +344,63 @@ button[aria-label]::before {
   width: 2.75rem;
   height: 2.75rem;
   content: "";
+}
+
+.button {
+  padding-block: 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  font-weight: 500;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.25rem;
+}
+.button--alt {
+  color: var(--color-accent);
+  background-color: var(--color-accent-10);
+  border: none;
+}
+.button--alt:hover {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+}
+
+.header {
+  width: 100%;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding-block: 3rem;
+}
+.header__logo {
+  font-size: clamp(1.25rem, 1.1862745098rem + 0.2614379085vw, 1.5rem);
+  color: black;
+  font-family: var(--font-family-accent);
+  letter-spacing: -0.06rem;
+}
+.header__menu-list {
+  display: flex;
+  gap: 2.8125rem;
+}
+.header__menu-link.drop-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+.header__menu-link.drop-button::after {
+  width: 0.5rem;
+  height: 0.5rem;
+  content: "";
+  background: url("../icons/arrow-right.svg") center/cover no-repeat;
+}
+.header__reg {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header__reg-start {
+  padding-inline: 1.5rem;
 }/*# sourceMappingURL=main.css.map */
