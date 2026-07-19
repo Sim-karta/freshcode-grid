@@ -1,0 +1,51 @@
+@use "../helpers" as *;
+
+.header {
+    width: 100%;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: #{rem(24)};
+        padding-block: #{fluid(48, 32)};
+    }
+
+    &__logo {
+        @include fluid-text(24, 20);
+
+        color: black;
+        font-family: var(--font-family-accent);
+        letter-spacing: -0.06rem;
+    }
+
+    &__menu {
+        &-list {
+            display: flex;
+            gap: #{fluid(40, 30)};
+        }
+
+        &-link.drop-button {
+            @include flex-center;
+            gap: #{rem(4)};
+
+            &::after {
+                @include square(#{rem(8)});
+
+                content: "";
+                background: url("../icons/arrow-right.svg") center/cover
+                    no-repeat;
+            }
+        }
+    }
+
+    &__reg {
+        display: flex;
+        align-items: center;
+        gap: #{rem(16)};
+
+        &-start {
+            padding-inline: #{fluid(24, 16)};
+        }
+    }
+}
