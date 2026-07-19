@@ -8,7 +8,7 @@
         justify-content: space-between;
         align-items: center;
         gap: #{rem(24)};
-        padding-block: #{rem(48)};
+        padding-block: #{fluid(48, 32)};
     }
 
     &__logo {
@@ -22,7 +22,7 @@
     &__menu {
         &-list {
             display: flex;
-            gap: #{rem(45)};
+            gap: #{fluid(40, 30)};
         }
 
         &-link.drop-button {
@@ -45,7 +45,7 @@
         gap: #{rem(16)};
 
         &-start {
-            padding-inline: #{rem(24)};
+            padding-inline: #{fluid(24, 16)};
         }
     }
 }

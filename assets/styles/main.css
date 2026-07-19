@@ -372,7 +372,7 @@ button[aria-label]::before {
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  padding-block: 3rem;
+  padding-block: clamp(2rem, 1.7450980392rem + 1.045751634vw, 3rem);
 }
 .header__logo {
   font-size: clamp(1.25rem, 1.1862745098rem + 0.2614379085vw, 1.5rem);
@@ -382,7 +382,7 @@ button[aria-label]::before {
 }
 .header__menu-list {
   display: flex;
-  gap: 2.8125rem;
+  gap: clamp(1.875rem, 1.7156862745rem + 0.6535947712vw, 2.5rem);
 }
 .header__menu-link.drop-button {
   display: flex;
@@ -402,5 +402,23 @@ button[aria-label]::before {
   gap: 1rem;
 }
 .header__reg-start {
-  padding-inline: 1.5rem;
+  padding-inline: clamp(1rem, 0.8725490196rem + 0.522875817vw, 1.5rem);
+}
+
+.burger-button {
+  width: 24;
+  height: 24;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.burger-button__line {
+  display: flex;
+  background-color: var(--color-dark);
+  width: 100%;
+  height: 0.125rem;
+}
+.burger-button__text {
+  font-size: clamp(0.5rem, 0.4362745098rem + 0.2614379085vw, 0.75rem);
+  text-transform: uppercase;
 }/*# sourceMappingURL=main.css.map */
