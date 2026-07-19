@@ -1,0 +1,332 @@
+@charset "UTF-8";
+/**
+  Блочна модель
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Прибираємо внутрішні відступи зліва для списків
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Прибираємо зовнішні відступи для body, цитат, підписів та групи полів форми
+ */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+  margin: 0;
+}
+
+/**
+  Прибираємо зовнішні вертикальні відступи потрібним тегам,
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  padding: 0;
+  border: none;
+}
+
+/**
+  Прибираємо стандартний маркер списку
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Прибираємо зовнішні вертикальні відступи,
+  створюємо локальну змінну для зовнішнього відступу вниз,
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Робимо зовнішній відступ вниз для не останнього параграфа без класу
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Нормалізуємо зображення та відео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  Успадковуємо шрифт для потрібних тегів
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  height: 100%;
+  /**
+    Налаштування скролбару та скролу
+   */
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+/**
+  Нормалізація розмірів посилання
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Курсор-палець при наведенні
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Прибрає сіре підсвічування при тапі на мобільних пристроях
+ */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/**
+  Приодимо до єдиного кольору svg-елементи
+ */
+:where([fill]:not([fill=none],
+[fill^=url])) {
+  fill: currentColor;
+}
+
+:where([stroke]:not([stroke=none],
+[stroke^=url])) {
+  stroke: currentColor;
+}
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Приведення рамок таблиць у класичний 'collapse' вигляд
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+  Прибираємо аніміації для тих хто їх не використовує
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-SemiBold.woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --color-light: #ffffff;
+  --color-gray: #fbfafe;
+  --color-gray-10: #d9dbe1;
+  --color-dark: #35414b;
+  --color-dark-10: #4e5a65;
+  --color-very-dark: #1d2830;
+  --color-accent: #794cff;
+  --color-accent-10: #ece5ff;
+  --color-accent-20: #f6f3fc;
+  --border: 0.0625rem solid #f0ebfa;
+  --font-family: "Inter", sans-serif;
+  --container-width: 91.875rem;
+  --container-padding-x: 1rem;
+  --transition-duration: 0.2s;
+}
+@media (width <= 90.06125rem) {
+  :root {
+    --container-width: 80rem;
+  }
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (width <= 47.99875rem) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (width > 47.99875rem) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+body {
+  font-size: clamp(0.875rem, 0.8112745098rem + 0.2614379085vw, 1.125rem);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  color: var(--color-dark-10);
+  background-color: var(--color-light);
+  overflow-x: hidden;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+h1,
+.h1 {
+  font-size: clamp(2rem, 1.4901960784rem + 2.091503268vw, 4rem);
+  line-height: 1.2;
+}
+
+h2,
+.h2 {
+  font-size: clamp(1.125rem, 0.7745098039rem + 1.4379084967vw, 2.5rem);
+}
+
+h3,
+.h3 {
+  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+}
+@media (any-hover: hover) {
+  a:hover {
+    color: var(--color-accent);
+  }
+}
+@media (any-hover: none) {
+  a:active {
+    color: var(--color-accent);
+  }
+}
+a[class] {
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 0.125rem dashed var(--color-dark);
+  outline-offset: 0.25rem;
+  transition-duration: 0s !important;
+}
+
+a[aria-label],
+button[aria-label] {
+  position: relative;
+}
+a[aria-label]::before,
+button[aria-label]::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 2.75rem;
+  height: 2.75rem;
+  content: "";
+}/*# sourceMappingURL=main.css.map */
