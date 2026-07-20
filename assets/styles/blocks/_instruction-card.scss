@@ -1,0 +1,26 @@
+@use "../helpers" as *;
+
+.instruction-card {
+    display: flex;
+    flex-direction: column;
+    gap: #{rem(10)};
+    padding: #{fluid(26, 18)} #{rem(32)};
+    border-bottom: var(--border);
+
+    &.is-active {
+        background-color: var(--color-accent-20);
+        border-left: 8px solid var(--color-accent);
+        border-bottom: none;
+        border-radius: 0 #{rem(8)} #{rem(8)} 0;
+    }
+
+    &__title {
+        font-size: #{rem(18)};
+        font-weight: 600;
+    }
+
+    &__description {
+        font-size: #{rem(18)};
+        color: var(--color-dark-10);
+    }
+}

@@ -593,11 +593,34 @@ button[aria-label]::before {
 
 .instruction__container {
   display: flex;
+  align-items: center;
   gap: clamp(2rem, 1.2352941176rem + 3.137254902vw, 5rem);
 }
 .instruction__list {
   display: flex;
   flex-direction: column;
+}
+
+.instruction-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: clamp(1.125rem, 0.9975490196rem + 0.522875817vw, 1.625rem) 2rem;
+  border-bottom: var(--border);
+}
+.instruction-card.is-active {
+  background-color: var(--color-accent-20);
+  border-left: 8px solid var(--color-accent);
+  border-bottom: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.instruction-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.instruction-card__description {
+  font-size: 1.125rem;
+  color: var(--color-dark-10);
 }
 
 .footer {

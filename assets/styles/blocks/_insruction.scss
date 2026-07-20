@@ -3,6 +3,7 @@
 .instruction {
     &__container {
         display: flex;
+        align-items: center;
         gap: #{fluid(80, 32)};
     }
 
