@@ -1,7 +1,7 @@
 @use "../helpers" as *;
 
 .button {
-    padding-block: #{rem(16)};
+    height: var(--button-height);
     background-color: var(--color-accent);
     color: var(--color-light);
     font-weight: 500;

@@ -394,7 +394,7 @@ button[aria-label]::before {
   width: 0.5rem;
   height: 0.5rem;
   content: "";
-  background: url("../icons/arrow-right.svg") center/cover no-repeat;
+  background: url("./../icons/arrow-right.svg") center/cover no-repeat;
 }
 .header__reg {
   display: flex;
