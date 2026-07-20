@@ -1,0 +1,29 @@
+@use "../helpers" as *;
+
+.instruction {
+    &__demonstrate {
+        display: flex;
+        max-width: #{rem(900)};
+        width: 100%;
+
+        &-img {
+            width: 100%;
+        }
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        gap: #{fluid(80, 32)};
+
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}

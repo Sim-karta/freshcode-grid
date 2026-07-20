@@ -584,6 +584,72 @@ button[aria-label]::before {
 .section {
   padding-block: clamp(3.5rem, 2.7990196078rem + 2.8758169935vw, 6.25rem);
 }
+.section--gray {
+  padding-block: clamp(2rem, 1.5539215686rem + 1.8300653595vw, 3.75rem);
+  background-color: var(--color-gray);
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
+
+.instruction__demonstrate {
+  display: flex;
+  max-width: 56.25rem;
+  width: 100%;
+}
+.instruction__demonstrate-img {
+  width: 100%;
+}
+.instruction__container {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 1.2352941176rem + 3.137254902vw, 5rem);
+}
+@media (width <= 63.99875rem) {
+  .instruction__container {
+    flex-direction: column;
+  }
+}
+.instruction__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.instruction-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: clamp(1.125rem, 0.9975490196rem + 0.522875817vw, 1.625rem) 2rem;
+}
+.instruction-card:not(:last-child) {
+  border-bottom: var(--border);
+}
+@media (width <= 63.99875rem) {
+  .instruction-card {
+    text-align: center;
+  }
+}
+.instruction-card.is-active {
+  background-color: var(--color-accent-20);
+  border-left: 8px solid var(--color-accent);
+  border-bottom: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+@media (width <= 63.99875rem) {
+  .instruction-card.is-active {
+    border-bottom: 8px solid var(--color-accent);
+    border-left: none;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+}
+.instruction-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.instruction-card__description {
+  font-size: 1.125rem;
+  color: var(--color-dark-10);
+}
 
 .footer {
   background-color: var(--color-very-dark);
