@@ -623,4 +623,32 @@ button[aria-label]::before {
   -moz-column-gap: 1rem;
        column-gap: 1rem;
   padding: 2rem clamp(2.875rem, 0.7401960784rem + 8.7581699346vw, 11.25rem);
+}
+
+.soc1als__list {
+  display: flex;
+  gap: 1.5rem;
+}
+.soc1als__item {
+  position: relative;
+}
+.soc1als__item::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 2rem;
+  height: 2rem;
+  content: "";
+  position: absolute;
+  background-color: var(--color-light);
+  opacity: 0.1;
+  border-radius: 50%;
+}
+.soc1als__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.125rem;
+  height: 1.125rem;
 }/*# sourceMappingURL=main.css.map */
