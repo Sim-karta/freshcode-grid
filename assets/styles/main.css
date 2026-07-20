@@ -214,6 +214,7 @@ svg * {
   --color-accent: #794cff;
   --color-accent-10: #ece5ff;
   --color-accent-20: #f6f3fc;
+  --button-height: 3rem;
   --border: 0.0625rem solid #f0ebfa;
   --font-family: "Inter", sans-serif;
   --font-family-accent: "Josefin Sans", sans-serif;
@@ -347,12 +348,19 @@ button[aria-label]::before {
 }
 
 .button {
-  padding-block: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--button-height);
   background-color: var(--color-accent);
   color: var(--color-light);
   font-weight: 500;
   border: 1px solid var(--color-accent);
   border-radius: 0.25rem;
+}
+.button:hover {
+  color: var(--color-accent);
+  background-color: var(--color-accent-10);
 }
 .button--alt {
   color: var(--color-accent);
@@ -421,4 +429,64 @@ button[aria-label]::before {
 .burger-button__text {
   font-size: clamp(0.5rem, 0.4362745098rem + 0.2614379085vw, 0.75rem);
   text-transform: uppercase;
+}
+
+.hero__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(2rem, 1.7450980392rem + 1.045751634vw, 3rem);
+  padding-inline: clamp(0rem, -1.5134803922rem + 6.2091503268vw, 5.9375rem);
+}
+.hero__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: clamp(1rem, 0.8725490196rem + 0.522875817vw, 1.5rem);
+  padding-inline: clamp(2rem, 1.2352941176rem + 3.137254902vw, 5rem);
+}
+.hero__header-save {
+  font-size: clamp(0.8125rem, 0.7647058824rem + 0.1960784314vw, 1rem);
+  position: relative;
+  background-color: #f2f9eb;
+  padding: clamp(0.125rem, 0.0931372549rem + 0.1307189542vw, 0.25rem) clamp(1rem, 0.9044117647rem + 0.3921568627vw, 1.375rem);
+  border-radius: 0 1rem 1rem 0;
+}
+.hero__header-save::before {
+  font-size: clamp(0.8125rem, 0.7647058824rem + 0.1960784314vw, 1rem);
+  content: "Save 90%";
+  position: absolute;
+  top: 0;
+  left: -47%;
+  display: flex;
+  color: var(--color-light);
+  background-color: #81c43b;
+  padding: 0.25rem 1rem;
+  border-radius: 1.375rem;
+}
+.hero__header-title {
+  max-width: 47.5rem;
+  width: 100%;
+}
+.hero__header-subtitle {
+  max-width: 31.5625rem;
+  width: 100%;
+}
+.hero__header-reg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero__header-input {
+  height: var(--button-height);
+  border-radius: 0.25rem 0 0 0.25rem;
+  padding-inline: 1.5rem;
+  border: var(--border);
+}
+.hero__header-button {
+  border-radius: 0 0.25rem 0.25rem 0;
+  padding-inline: 2.8125rem;
 }/*# sourceMappingURL=main.css.map */
