@@ -214,6 +214,7 @@ svg * {
   --color-accent: #794cff;
   --color-accent-10: #ece5ff;
   --color-accent-20: #f6f3fc;
+  --button-height: 3rem;
   --border: 0.0625rem solid #f0ebfa;
   --font-family: "Inter", sans-serif;
   --font-family-accent: "Josefin Sans", sans-serif;
@@ -347,12 +348,19 @@ button[aria-label]::before {
 }
 
 .button {
-  padding-block: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--button-height);
   background-color: var(--color-accent);
   color: var(--color-light);
   font-weight: 500;
   border: 1px solid var(--color-accent);
   border-radius: 0.25rem;
+}
+.button:hover {
+  color: var(--color-accent);
+  background-color: var(--color-accent-10);
 }
 .button--alt {
   color: var(--color-accent);
@@ -394,7 +402,8 @@ button[aria-label]::before {
   width: 0.5rem;
   height: 0.5rem;
   content: "";
-  background: url("../icons/arrow-right.svg") center/cover no-repeat;
+
+  background: url("./../icons/arrow-bottom.svg") center/cover no-repeat;
   transition-duration: var(--transition-duration);
 }
 .header__menu-link.drop-button:hover::after {
@@ -426,4 +435,127 @@ button[aria-label]::before {
 .burger-button__text {
   font-size: clamp(0.5rem, 0.4362745098rem + 0.2614379085vw, 0.75rem);
   text-transform: uppercase;
+}
+
+.hero__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(2rem, 1.7450980392rem + 1.045751634vw, 3rem);
+  padding-inline: clamp(0rem, -1.5134803922rem + 6.2091503268vw, 5.9375rem);
+}
+.hero__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: clamp(1rem, 0.8725490196rem + 0.522875817vw, 1.5rem);
+  padding-inline: clamp(2rem, 1.2352941176rem + 3.137254902vw, 5rem);
+}
+.hero__header-save {
+  font-size: clamp(0.8125rem, 0.7647058824rem + 0.1960784314vw, 1rem);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+  background-color: #f2f9eb;
+  padding: clamp(0.125rem, 0.0931372549rem + 0.1307189542vw, 0.25rem) clamp(1rem, 0.9044117647rem + 0.3921568627vw, 1.375rem);
+  border-radius: 1rem;
+}
+@media (width > 47.99875rem) {
+  .hero__header-save {
+    border-radius: 0 1rem 1rem 0;
+  }
+}
+.hero__header-save:hover {
+  text-decoration: underline;
+}
+.hero__header-save::before {
+  font-size: clamp(0.8125rem, 0.7647058824rem + 0.1960784314vw, 1rem);
+}
+@media (width > 47.99875rem) {
+  .hero__header-save::before {
+    content: "Save 90%";
+  }
+}
+.hero__header-save::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  color: var(--color-light);
+  background-color: #81c43b;
+  padding: clamp(0.125rem, 0.0931372549rem + 0.1307189542vw, 0.25rem) clamp(1rem, 0.9044117647rem + 0.3921568627vw, 1.375rem);
+  border-radius: 1rem;
+  translate: calc(-100% + 1rem);
+}
+.hero__header-save::after {
+  content: "";
+  background: url("./../icons/arrow-right.svg") center/cover no-repeat;
+  width: 0.25rem;
+  height: 0.5rem;
+  transition-duration: var(--transition-duration);
+}
+.hero__header-save:hover::after {
+  scale: 1.1;
+  translate: 100%;
+}
+@media (width > 47.99875rem) {
+  .hero__header-save {
+    translate: 20%;
+  }
+}
+.hero__header-title {
+  max-width: 47.5rem;
+  width: 100%;
+}
+.hero__header-subtitle {
+  max-width: 31.5625rem;
+  width: 100%;
+}
+.hero__header-reg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (width <= 47.99875rem) {
+  .hero__header-reg {
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 20rem;
+    width: 100%;
+  }
+}
+.hero__header-input {
+  height: var(--button-height);
+  border-radius: 0.25rem;
+  padding-inline: 1.5rem;
+  border: var(--border);
+}
+@media (width > 47.99875rem) {
+  .hero__header-input {
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__header-input {
+    width: 100%;
+    text-align: center;
+  }
+}
+.hero__header-button {
+  border-radius: 0.25rem;
+  padding-inline: 2.8125rem;
+}
+@media (width > 47.99875rem) {
+  .hero__header-button {
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__header-button {
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */

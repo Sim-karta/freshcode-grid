@@ -1,0 +1,126 @@
+@use "../helpers" as *;
+
+.hero {
+    &__container {
+        @include flex-center;
+
+        flex-direction: column;
+        gap: fluid(48, 32);
+        padding-inline: fluid(95, 0);
+    }
+
+    &__header {
+        @include flex-center;
+
+        flex-direction: column;
+        text-align: center;
+        gap: fluid(24, 16);
+        padding-inline: fluid(80, 32);
+
+        &-save {
+            @include fluid-text(16, 13);
+
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: #{rem(5)};
+            background-color: #f2f9eb;
+            padding: #{fluid(4, 2)} #{fluid(22, 16)};
+            border-radius: #{rem(16)};
+
+            @include mobile-above {
+                border-radius: 0 #{rem(16)} #{rem(16)} 0;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &::before {
+                @include fluid-text(16, 13);
+
+                @include mobile-above {
+                    content: "Save 90%";
+                }
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                color: var(--color-light);
+                background-color: #81c43b;
+                padding: #{fluid(4, 2)} #{fluid(22, 16)};
+                border-radius: #{rem(16)};
+                translate: calc(-100% + #{rem(16)});
+            }
+
+            &::after {
+                content: "";
+                background: url("./../icons/arrow-right.svg") center/cover
+                    no-repeat;
+                width: #{rem(4)};
+                height: #{rem(8)};
+                transition-duration: var(--transition-duration);
+            }
+
+            &:hover::after {
+                scale: 1.1;
+                translate: 100%;
+            }
+
+            @include mobile-above {
+                translate: 20%;
+            }
+        }
+
+        &-title {
+            max-width: #{rem(760)};
+            width: 100%;
+        }
+
+        &-subtitle {
+            max-width: #{rem(505)};
+            width: 100%;
+        }
+
+        &-reg {
+            @include flex-center;
+
+            @include mobile {
+                flex-direction: column;
+                gap: #{rem(8)};
+                max-width: #{rem(320)};
+                width: 100%;
+            }
+        }
+
+        &-input {
+            height: var(--button-height);
+            border-radius: #{rem(4)};
+            padding-inline: #{rem(24)};
+            border: var(--border);
+
+            @include mobile-above {
+                border-radius: #{rem(4)} 0 0 #{rem(4)};
+            }
+
+            @include mobile {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        &-button {
+            border-radius: #{rem(4)};
+            padding-inline: #{rem(45)};
+
+            @include mobile-above {
+                border-radius: 0 #{rem(4)} #{rem(4)} 0;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+}

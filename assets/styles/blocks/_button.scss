@@ -1,12 +1,19 @@
 @use "../helpers" as *;
 
 .button {
-    padding-block: #{rem(16)};
+    @include flex-center;
+
+    height: var(--button-height);
     background-color: var(--color-accent);
     color: var(--color-light);
     font-weight: 500;
     border: 1px solid var(--color-accent);
     border-radius: #{rem(4)};
+
+    &:hover {
+        color: var(--color-accent);
+        background-color: var(--color-accent-10);
+    }
 
     &--alt {
         color: var(--color-accent);

@@ -33,7 +33,7 @@
                 @include square(#{rem(8)});
 
                 content: "";
-                background: url("../icons/arrow-right.svg") center/cover
+                background: url("./../icons/arrow-bottom.svg") center/cover
                     no-repeat;
                 transition-duration: var(--transition-duration);
             }
