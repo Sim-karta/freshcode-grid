@@ -585,9 +585,19 @@ button[aria-label]::before {
   padding-block: clamp(3.5rem, 2.7990196078rem + 2.8758169935vw, 6.25rem);
 }
 .section--gray {
+  padding-block: clamp(2rem, 1.5539215686rem + 1.8300653595vw, 3.75rem);
   background-color: var(--color-gray);
   border-top: var(--border);
   border-bottom: var(--border);
+}
+
+.instruction__container {
+  display: flex;
+  gap: clamp(2rem, 1.2352941176rem + 3.137254902vw, 5rem);
+}
+.instruction__list {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {

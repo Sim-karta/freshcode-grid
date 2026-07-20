@@ -1,0 +1,13 @@
+@use "../helpers" as *;
+
+.instruction {
+    &__container {
+        display: flex;
+        gap: #{fluid(80, 32)};
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+}
