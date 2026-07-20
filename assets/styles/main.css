@@ -402,7 +402,7 @@ button[aria-label]::before {
   width: 0.5rem;
   height: 0.5rem;
   content: "";
-  background: url("./../icons/arrow-right.svg") center/cover no-repeat;
+  background: url("./../icons/arrow-bottom.svg") center/cover no-repeat;
 }
 .header__reg {
   display: flex;
@@ -451,21 +451,40 @@ button[aria-label]::before {
 .hero__header-save {
   font-size: clamp(0.8125rem, 0.7647058824rem + 0.1960784314vw, 1rem);
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
   background-color: #f2f9eb;
   padding: clamp(0.125rem, 0.0931372549rem + 0.1307189542vw, 0.25rem) clamp(1rem, 0.9044117647rem + 0.3921568627vw, 1.375rem);
   border-radius: 0 1rem 1rem 0;
+  translate: 20%;
+}
+.hero__header-save:hover {
+  text-decoration: underline;
 }
 .hero__header-save::before {
   font-size: clamp(0.8125rem, 0.7647058824rem + 0.1960784314vw, 1rem);
   content: "Save 90%";
   position: absolute;
   top: 0;
-  left: -47%;
+  left: 0;
   display: flex;
   color: var(--color-light);
   background-color: #81c43b;
-  padding: 0.25rem 1rem;
-  border-radius: 1.375rem;
+  padding: clamp(0.125rem, 0.0931372549rem + 0.1307189542vw, 0.25rem) clamp(1rem, 0.9044117647rem + 0.3921568627vw, 1.375rem);
+  border-radius: 1rem;
+  translate: calc(-100% + 1rem);
+}
+.hero__header-save::after {
+  content: "";
+  background: url("./../icons/arrow-right.svg") center/cover no-repeat;
+  width: 0.25rem;
+  height: 0.5rem;
+  transition-duration: var(--transition-duration);
+}
+.hero__header-save:hover::after {
+  scale: 1.1;
+  translate: 100%;
 }
 .hero__header-title {
   max-width: 47.5rem;
