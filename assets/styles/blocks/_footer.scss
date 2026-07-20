@@ -37,6 +37,13 @@
 
             @include mobile {
                 &:not(.install) {
+                    &:hover {
+                        color: var(--color-accent-10);
+                        text-decoration: underline;
+                        scale: 1.05;
+                        opacity: 0.8;
+                    }
+
                     &::after {
                         content: "";
                         display: flex;

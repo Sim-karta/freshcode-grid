@@ -622,6 +622,12 @@ button[aria-label]::before {
   justify-content: space-between;
 }
 @media (width <= 47.99875rem) {
+  .footer__menu-h:not(.install):hover {
+    color: var(--color-accent-10);
+    text-decoration: underline;
+    scale: 1.05;
+    opacity: 0.8;
+  }
   .footer__menu-h:not(.install)::after {
     content: "";
     display: flex;
