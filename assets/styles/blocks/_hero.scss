@@ -123,4 +123,31 @@
             }
         }
     }
+
+    &__trusted {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: #{fluid(24, 16)};
+
+        &-title {
+            text-transform: uppercase;
+
+            & .bold-text {
+                font-weight: 700;
+            }
+        }
+
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            gap: #{fluid(132, 32)};
+
+            @include mobile {
+                & > *:nth-child(n + 5) {
+                    display: none;
+                }
+            }
+        }
+    }
 }
