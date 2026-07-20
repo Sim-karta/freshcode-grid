@@ -395,6 +395,11 @@ button[aria-label]::before {
   height: 0.5rem;
   content: "";
   background: url("../icons/arrow-right.svg") center/cover no-repeat;
+  transition-duration: var(--transition-duration);
+}
+.header__menu-link.drop-button:hover::after {
+  scale: 1.2;
+  translate: 0 15%;
 }
 .header__reg {
   display: flex;
