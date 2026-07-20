@@ -591,14 +591,28 @@ button[aria-label]::before {
   border-bottom: var(--border);
 }
 
+.instruction__demonstrate {
+  display: flex;
+  max-width: 56.25rem;
+  width: 100%;
+}
+.instruction__demonstrate-img {
+  width: 100%;
+}
 .instruction__container {
   display: flex;
   align-items: center;
   gap: clamp(2rem, 1.2352941176rem + 3.137254902vw, 5rem);
 }
+@media (width <= 63.99875rem) {
+  .instruction__container {
+    flex-direction: column;
+  }
+}
 .instruction__list {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .instruction-card {
@@ -606,13 +620,27 @@ button[aria-label]::before {
   flex-direction: column;
   gap: 0.625rem;
   padding: clamp(1.125rem, 0.9975490196rem + 0.522875817vw, 1.625rem) 2rem;
+}
+.instruction-card:not(:last-child) {
   border-bottom: var(--border);
+}
+@media (width <= 63.99875rem) {
+  .instruction-card {
+    text-align: center;
+  }
 }
 .instruction-card.is-active {
   background-color: var(--color-accent-20);
   border-left: 8px solid var(--color-accent);
   border-bottom: none;
   border-radius: 0 0.5rem 0.5rem 0;
+}
+@media (width <= 63.99875rem) {
+  .instruction-card.is-active {
+    border-bottom: 8px solid var(--color-accent);
+    border-left: none;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
 }
 .instruction-card__title {
   font-size: 1.125rem;
