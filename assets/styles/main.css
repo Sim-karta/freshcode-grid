@@ -579,4 +579,8 @@ button[aria-label]::before {
   .hero__trusted-list > *:nth-child(n+5) {
     display: none;
   }
+}
+
+.section {
+  padding-block: clamp(3.5rem, 2.7990196078rem + 2.8758169935vw, 6.25rem);
 }/*# sourceMappingURL=main.css.map */

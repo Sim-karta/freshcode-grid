@@ -1,0 +1,5 @@
+@use "../helpers" as *;
+
+.section {
+    padding-block: #{fluid(100, 56)};
+}
