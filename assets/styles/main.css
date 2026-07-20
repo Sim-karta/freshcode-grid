@@ -584,6 +584,11 @@ button[aria-label]::before {
 .section {
   padding-block: clamp(3.5rem, 2.7990196078rem + 2.8758169935vw, 6.25rem);
 }
+.section--gray {
+  background-color: var(--color-gray);
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
 
 .footer {
   background-color: var(--color-very-dark);
