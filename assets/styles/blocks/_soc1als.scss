@@ -1,0 +1,28 @@
+@use "../helpers" as *;
+
+.soc1als {
+    &__list {
+        display: flex;
+        gap: #{rem(24)};
+    }
+
+    &__item {
+        position: relative;
+
+        &::before {
+            @include abs-center;
+            @include square(#{rem(32)});
+            content: "";
+            position: absolute;
+
+            background-color: var(--color-light);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+    }
+
+    &__link {
+        @include flex-center;
+        @include square(#{rem(18)});
+    }
+}
