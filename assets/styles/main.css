@@ -667,6 +667,18 @@ button[aria-label]::before {
   color: var(--color-dark-10);
 }
 
+.advice-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: clamp(1rem, 0.8725490196rem + 0.522875817vw, 1.5rem);
+}
+.advice-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .footer {
   background-color: var(--color-very-dark);
   color: var(--color-light);
