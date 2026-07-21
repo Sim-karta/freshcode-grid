@@ -371,6 +371,10 @@ button[aria-label]::before {
   background-color: var(--color-accent);
   color: var(--color-light);
 }
+.button.show-more {
+  max-width: 21.875rem;
+  width: 100%;
+}
 
 .header {
   width: 100%;
@@ -590,10 +594,24 @@ button[aria-label]::before {
 .grid--3-cols {
   grid-template-columns: repeat(3, 1fr);
 }
+@media (width <= 63.99875rem) {
+  .grid--3-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width <= 47.99875rem) {
+  .grid--3-cols {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid--3-cols > *:nth-child(n+4) {
+    display: none;
+  }
+}
 
 .section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: clamp(2.5rem, 2.3406862745rem + 0.6535947712vw, 3.125rem);
   padding-block: clamp(3.5rem, 2.7990196078rem + 2.8758169935vw, 6.25rem);
 }
@@ -605,6 +623,12 @@ button[aria-label]::before {
 }
 .section__header {
   text-align: center;
+}
+.section__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
 }
 
 .instruction__demonstrate {
@@ -673,10 +697,21 @@ button[aria-label]::before {
   align-items: start;
   gap: clamp(1rem, 0.8725490196rem + 0.522875817vw, 1.5rem);
 }
+@media (width <= 47.99875rem) {
+  .advice-card {
+    align-items: center;
+  }
+}
 .advice-card__body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+@media (width <= 47.99875rem) {
+  .advice-card__body {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .footer {

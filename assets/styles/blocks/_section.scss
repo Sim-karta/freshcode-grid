@@ -3,6 +3,7 @@
 .section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: #{fluid(50, 40)};
     padding-block: #{fluid(100, 56)};
 
@@ -15,5 +16,12 @@
 
     &__header {
         text-align: center;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: #{rem(40)};
     }
 }
