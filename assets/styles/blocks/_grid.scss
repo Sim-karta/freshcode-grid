@@ -1,0 +1,11 @@
+@use "../helpers" as *;
+
+.grid {
+    display: grid;
+    column-gap: #{rem(120)};
+    row-gap: #{fluid(80, 48)};
+
+    &--3-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

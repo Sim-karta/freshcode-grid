@@ -1,6 +1,9 @@
 @use "../helpers" as *;
 
 .section {
+    display: flex;
+    flex-direction: column;
+    gap: #{fluid(50, 40)};
     padding-block: #{fluid(100, 56)};
 
     &--gray {
@@ -8,5 +11,9 @@
         background-color: var(--color-gray);
         border-top: var(--border);
         border-bottom: var(--border);
+    }
+
+    &__header {
+        text-align: center;
     }
 }

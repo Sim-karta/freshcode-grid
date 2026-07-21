@@ -581,7 +581,20 @@ button[aria-label]::before {
   }
 }
 
+.grid {
+  display: grid;
+  -moz-column-gap: 7.5rem;
+       column-gap: 7.5rem;
+  row-gap: clamp(3rem, 2.4901960784rem + 2.091503268vw, 5rem);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 2.3406862745rem + 0.6535947712vw, 3.125rem);
   padding-block: clamp(3.5rem, 2.7990196078rem + 2.8758169935vw, 6.25rem);
 }
 .section--gray {
@@ -589,6 +602,9 @@ button[aria-label]::before {
   background-color: var(--color-gray);
   border-top: var(--border);
   border-bottom: var(--border);
+}
+.section__header {
+  text-align: center;
 }
 
 .instruction__demonstrate {
