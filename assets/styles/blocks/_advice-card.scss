@@ -1,0 +1,23 @@
+@use "../helpers" as *;
+
+.advice-card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: #{fluid(24, 16)};
+
+    @include mobile {
+        align-items: center;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: #{rem(8)};
+
+        @include mobile {
+            align-items: center;
+            text-align: center;
+        }
+    }
+}

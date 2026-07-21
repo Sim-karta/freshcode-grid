@@ -25,4 +25,9 @@
             color: var(--color-light);
         }
     }
+
+    &.show-more {
+        max-width: #{rem(350)};
+        width: 100%;
+    }
 }
